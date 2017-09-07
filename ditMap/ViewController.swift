@@ -54,7 +54,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
             
             if annotation.title! == "부산시민공원" {
-                annotationView?.pinTintColor = UIColor.green
+                annotationView?.pinTintColor = UIColor.blue
                 leftIconView.image = UIImage(named:"부산시민공원.png" )
                 annotationView?.leftCalloutAccessoryView = leftIconView
 
@@ -88,12 +88,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         print("\(viewTitle) \(viewSubTitle)")
         
-        let ac = UIAlertController(title: viewTitle, message: viewSubTitle, preferredStyle: .alert)
+        let ac = UIAlertController(title: viewTitle, message: viewSubTitle, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        ac.addAction(UIAlertAction(title: "delete", style: .destructive, handler: nil))
         present(ac, animated: true, completion: nil)
     }
     
 
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

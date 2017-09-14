@@ -28,7 +28,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let anno01 = MKPointAnnotation()
         anno01.coordinate = center
         anno01.title = "DIT동의과학대학교"
-        anno01.subtitle = "나의 꿈이 자라는 곳"
+        anno01.subtitle = "We are DIT"
         
         myMapView.addAnnotation(anno01)
         
@@ -88,10 +88,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         print("\(viewTitle) \(viewSubTitle)")
         
-        let ac = UIAlertController(title: viewTitle, message: viewSubTitle, preferredStyle: .actionSheet)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        ac.addAction(UIAlertAction(title: "delete", style: .destructive, handler: nil))
-        present(ac, animated: true, completion: nil)
+//        let ac = UIAlertController(title: viewTitle, message: viewSubTitle, preferredStyle: .actionSheet)
+//        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        ac.addAction(UIAlertAction(title: "delete", style: .destructive, handler: nil))
+//        present(ac, animated: true, completion: nil)
+        
+        if control == view.rightCalloutAccessoryView {
+            self.performSegue(withIdentifier: "goDetail", sender: self)
+        }
     }
     
 
